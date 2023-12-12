@@ -1,4 +1,4 @@
-lines = [line.strip() for line in open('input.txt')]
+lines = [line.strip() for line in open("input.txt")]
 total = 0
 
 
@@ -13,14 +13,12 @@ def mul(length):
 
 
 def add_up(cur_idx, length, mem):
-
     add_amount = mem[cur_idx]
 
     if cur_idx + 1 + length > len(mem):
         end = len(mem)
     else:
         end = cur_idx + 1 + length
-
 
     for idx in range(cur_idx + 1, end):
         mem[idx] += add_amount

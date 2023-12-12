@@ -19,10 +19,10 @@ def calculate(button_held_for, time, distance) -> bool:
     distance_travelled = button_held_for * time_left_for_race
     return distance_travelled >= distance
 
+
 race_counter = []
 
 for time, distance in zip(time, distance):
-
     count = 0
     for button_held_for in range(time):
         if calculate(button_held_for, time, distance):

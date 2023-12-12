@@ -1,6 +1,6 @@
 import sys
 
-lines = [line.strip() for line in open('input.txt')]
+lines = [line.strip() for line in open("input.txt")]
 
 
 def extract_number_coordinates(row_idx, line):
@@ -113,7 +113,7 @@ def read_digit(matrix, coordinates):
     for x, y in coordinates:
         buff.append(matrix[x][y])
 
-    return int(''.join(buff))
+    return int("".join(buff))
 
 
 for idx, row in enumerate(lines):
@@ -122,7 +122,6 @@ for idx, row in enumerate(lines):
 total = 0
 alone = []
 for coordinate in digit_coordinates:
-
     number = read_digit(lines, coordinate)
 
     if number == 484:
@@ -131,7 +130,6 @@ for coordinate in digit_coordinates:
     bool_buff = []
     for x, y in coordinate:
         bool_buff.append(check_coordinate(lines, (x, y)))
-
 
     if any(bool_buff):
         total += number

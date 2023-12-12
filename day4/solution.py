@@ -1,4 +1,4 @@
-lines = [line.strip() for line in open('input.txt')]
+lines = [line.strip() for line in open("input.txt")]
 total = 0
 
 

@@ -1,6 +1,6 @@
 import sys
 
-lines = [line.strip() for line in open('input_pt2.txt')]
+lines = [line.strip() for line in open("input_pt2.txt")]
 
 
 def extract_number_coordinates(row_idx, line):
@@ -113,7 +113,7 @@ def read_digit(matrix, coordinates):
     for x, y in coordinates:
         buff.append(matrix[x][y])
 
-    return int(''.join(buff))
+    return int("".join(buff))
 
 
 for idx, row in enumerate(lines):
@@ -145,7 +145,7 @@ def get_possible_indexes(x, y):
 
     def get_right(x, y):
         if x == 139:
-            return x,y
+            return x, y
         return x + 1, y
 
     def get_up_left(x, y):
@@ -187,8 +187,7 @@ def get_possible_indexes(x, y):
     return s
 
 
-def do_search(digit_coordinates, x,y):
-
+def do_search(digit_coordinates, x, y):
     for coordinate in digit_coordinates:
         for sub_index in coordinate:
             search_x, search_y = sub_index
@@ -197,10 +196,11 @@ def do_search(digit_coordinates, x,y):
 
     return -1
 
+
 total = 0
 
-def check_if_exists(a,b):
 
+def check_if_exists(a, b):
     def f(coordinate, lst):
         for item in lst:
             if coordinate == item:
@@ -212,13 +212,13 @@ def check_if_exists(a,b):
             if f(coordinate, b):
                 return True
 
-
     return False
+
 
 total = 0
 
-def get_product(search_results):
 
+def get_product(search_results):
     if len(search_results) == 1:
         return 0
 
@@ -228,6 +228,7 @@ def get_product(search_results):
         number = read_digit(lines, res)
         total *= number
     return total
+
 
 for gear in gears:
     x, y = gear
@@ -244,5 +245,3 @@ for gear in gears:
     total += product
 
 print(total)
-
-
